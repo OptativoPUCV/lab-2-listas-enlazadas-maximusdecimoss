@@ -36,14 +36,14 @@ List* createList() {
     L->tail = NULL;
     L->current = NULL;
 
-    return L;// Esta ya me funciono
+    return L;
 }
 
 void * firstList(List * list) {
     list->current = list->head;
     if (list->current) return list -> current -> data;
 
-    else return NULL;// Esta ya me funciono
+    else return NULL;
 }
 
 void * nextList(List * list) {
@@ -60,7 +60,7 @@ void* lastList(List* list) {
     if (!list || !list->tail) return NULL;
 
     list->current = list->tail;
-    return list->current->data;// esta ya me funciono
+    return list->current->data;
 }
 
 void * prevList(List * list) {
@@ -69,7 +69,7 @@ void * prevList(List * list) {
     if (list->current!=NULL)
     return list->current->data;
 
-    else return NULL; //Esta ya me funciono
+    else return NULL; 
 }
 
 void pushFront(List * list, void * data) {
@@ -89,12 +89,12 @@ void pushFront(List * list, void * data) {
     }
 
     list->head = newNode;         
-}// esta ya sirve
+}
 
 void pushBack(List * list, void * data) {
     list->current = list->tail;
     pushCurrent(list,data);
-}// esta ya sirve
+}
 
 void pushCurrent(List * list, void * data) {
     if(!list) return;
@@ -125,7 +125,7 @@ void pushCurrent(List * list, void * data) {
 
     }
 
-} //esta ya sirve tambien
+}
 
 void * popFront(List * list) {
     list->current = list->head;
@@ -158,5 +158,5 @@ void* popCurrent(List* list) {
 
     free(auxDelete);
 
-    return data;
+    return data; 
 }
