@@ -156,9 +156,12 @@ void * popCurrent(List * list) {
     }
     
     else{
-        list -> head = auxDelete -> next;
+        list -> tail = auxDelete -> next;
     
     }
 
+    list -> current = auxDelete -prev;
+    free(auxDelete);
+    
     return data;
 }
