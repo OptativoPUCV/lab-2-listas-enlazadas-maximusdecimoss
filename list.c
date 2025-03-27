@@ -89,12 +89,12 @@ void pushFront(List * list, void * data) {
     }
 
     list->head = newNode;         
-}
+}// esta ya sirve
 
 void pushBack(List * list, void * data) {
     list->current = list->tail;
     pushCurrent(list,data);
-}
+}// esta ya sirve
 
 void pushCurrent(List * list, void * data) {
     if(!list) return;
@@ -125,7 +125,7 @@ void pushCurrent(List * list, void * data) {
 
     }
 
-}
+} //esta ya sirve tambien
 
 void * popFront(List * list) {
     list->current = list->head;
@@ -147,5 +147,18 @@ void * popCurrent(List * list) {
         auxDelete -> prev -> next = auxDelete -> next;
     }
 
+    else{
+        list -> head = auxDelete -> next;
+    }
 
+    if(auxDelete -> next){
+        auxDelete -> next -> prev = auxDelete ->prev;
+    }
+    
+    else{
+        list -> head = auxDelete -> next;
+    
+    }
+
+    return data;
 }
