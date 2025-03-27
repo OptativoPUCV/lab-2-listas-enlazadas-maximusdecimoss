@@ -102,6 +102,10 @@ void pushCurrent(List * list, void * data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (!newNode) return;
 
+    newNode -> data = data;
+    newNode -> next = NULL;
+    
+
 }
 
 void * popFront(List * list) {
