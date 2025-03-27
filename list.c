@@ -142,5 +142,10 @@ void * popCurrent(List * list) {
 
     Node* auxDelete = list -> current;
     void* data = auxDelete -> data;
-    
+
+    if(auxDelete -> prev){
+        auxDelete -> prev -> next = auxDelete -> next;
+    }
+
+
 }
