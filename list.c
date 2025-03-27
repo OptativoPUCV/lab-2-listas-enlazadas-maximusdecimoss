@@ -138,11 +138,8 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-    return NULL;
-}
+    if (!list || !list->current) return NULL;
 
-void cleanList(List * list) {
-    while (list->head != NULL) {
-        popFront(list);
-    }
+    Node* auxDelete = list -> current;
+
 }
