@@ -122,3 +122,9 @@ list.c:163:34: error: 'prev' undeclared (first use in this function); did you me
 list.c:163:34: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 b5ce763
+Wed, Mar 26, 2025 11:34:10 PM: 
+ list.c | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
+ tests:  12|0
+total_score: 70/70
+2a5ef5a

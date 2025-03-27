@@ -136,32 +136,27 @@ void * popBack(List * list) {
     list->current = list->tail;
     return popCurrent(list);
 }
-
-void * popCurrent(List * list) {
+void* popCurrent(List* list) {
     if (!list || !list->current) return NULL;
 
-    Node* auxDelete = list -> current;
-    void* data = auxDelete -> data;
+    Node* auxDelete = list->current;
+    void* data = auxDelete->data;
 
-    if(auxDelete -> prev){
-        auxDelete -> prev -> next = auxDelete -> next;
+    if (auxDelete->prev) {
+        auxDelete->prev->next = auxDelete->next;
+    } else {
+        list->head = auxDelete->next;
     }
 
-    else{
-        list -> head = auxDelete -> next;
+    if (auxDelete->next) {
+        auxDelete->next->prev = auxDelete->prev;
+    } else {
+        list->tail = auxDelete->prev;
     }
 
-    if(auxDelete -> next){
-        auxDelete -> next -> prev = auxDelete ->prev;
-    }
-    
-    else{
-        list -> tail = auxDelete -> next;
-    
-    }
+    list->current = auxDelete->next ? auxDelete->next : auxDelete->prev;
 
-    list -> current = auxDelete -prev;
     free(auxDelete);
-    
+
     return data;
 }
